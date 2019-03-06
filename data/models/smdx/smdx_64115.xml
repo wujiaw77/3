@@ -1,0 +1,116 @@
+<sunSpecModels v="1">
+  <!-- 64115: OutBack Radian Split Phase Inverter -->
+  <model id="64115" len="58" name="PROXY: Radian Split-Phase">
+    <block len="58">
+      <point id="GS_Split_Port_number" offset="0" type="uint16" mandatory="true" />
+      <point id="GS_Split_DC_Voltage_SF" offset="1" type="sunssf" mandatory="true" />
+      <point id="GS_Split_AC_Current_SF" offset="2" type="sunssf" mandatory="true" />
+      <point id="GS_Split_AC_Voltage_SF" offset="3" type="sunssf" mandatory="true" />
+      <point id="GS_Split_AC_Frequency_SF" offset="4" type="sunssf" mandatory="true" />
+      <point id="GS_Split_L1_Inverter_Output_Current" offset="5" type="int16" sf="GS_Split_AC_Current_SF" />
+      <point id="GS_Split_L1_Inverter_Output_Current" offset="6" type="int16" sf="GS_Split_AC_Current_SF" />
+	  <point id="GS_Split_L1_Inverter_Buy_Current" offset="7" type="int16" sf="GS_Split_AC_Current_SF" />
+	  <point id="GS_Split_L1_Inverter_Sell_Current" offset="8" type="int16" sf="GS_Split_AC_Current_SF" />
+	  <point id="GS_Split_L1_Grid_Input_AC_Voltage" offset="9" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_L1_Gen_Input_AC_Voltage" offset="10" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_L1_Output_AC_Voltage" offset="11" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_L2_Inverter_Output_Current" offset="12" type="int16" sf="GS_Split_AC_Current_SF" />
+	  <point id="GS_Split_L2_Inverter_Charge_Current" offset="13" type="int16" sf="GS_Split_AC_Current_SF" />
+	  <point id="GS_Split_L2_Inverter_Buy_Current" offset="14" type="int16" sf="GS_Split_AC_Current_SF" />
+	  <point id="GS_Split_L2_Inverter_Sell_Current" offset="15" type="int16" sf="GS_Split_AC_Current_SF" />
+	  <point id="GS_Split_L2_Grid_Input_AC_Voltage" offset="16" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_L2_Gen_Input_AC_Voltage" offset="17" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_L2_Output_AC_Voltage" offset="18" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_Inverter_Operating_mode" offset="19" type="enum16" >
+	    <symbol id="OFF">0</symbol>
+        <symbol id="SEARCHING">1</symbol>
+        <symbol id="INVERTING">2</symbol>
+        <symbol id="CHARGING">3</symbol>
+        <symbol id="SILENT">4</symbol>
+        <symbol id="FLOAT">5</symbol>
+        <symbol id="EQ">6</symbol>
+        <symbol id="CHARGER_OFF">7</symbol>
+        <symbol id="SUPPORT">8</symbol>
+        <symbol id="SELLING">9</symbol>
+        <symbol id="PASS_THROUGH">10</symbol>
+        <symbol id="OFFSETTING">14</symbol>
+      </point>
+	  <point id="GS_Split_Error_Flags" offset="20" type="bitfield16" >
+	    <symbol id="LOW_AC_OUTPUT_VOLTAGE">0</symbol>
+        <symbol id="STACKING_ERROR">1</symbol>
+        <symbol id="OVER_TEMPERATURE_ERROR">2</symbol>
+        <symbol id="LOW_BATTERY_VOLTAGE">3</symbol>
+        <symbol id="PHASE_LOSS">4</symbol>
+        <symbol id="HIGH_BATTERY_VOLTAGE">5</symbol>
+        <symbol id="AC_OUTPUT_SHORTED">6</symbol>
+        <symbol id="AC_BACKFEED">7</symbol>
+      </point>
+	  <point id="GS_Split_Warning_Flags" offset="21" type="bitfield16" >
+	    <symbol id="AC_INPUT_FREQUENCY_TOO_HIGH">0</symbol>
+        <symbol id="AC_INPUT_FREQUENCY_TOO_LOW">1</symbol>
+        <symbol id="AC_INPUT_VOLTAGE_TOO_LOW">2</symbol>
+        <symbol id="AC_INPUT_VOLTAGE_TOO_HIGH">3</symbol>
+        <symbol id="AC_INPUT_CURRENT_EXCEEDS_MAX">4</symbol>
+        <symbol id="TEMPERATURE_SENSOR_BAD">5</symbol>
+        <symbol id="COMMUNICATIONS_ERROR">6</symbol>
+        <symbol id="COOLING_FAN_FAULT">7</symbol>
+      </point>
+	  <point id="GS_Split_Battery_Voltage" offset="22" type="int16" sf="GS_Split_DC_Voltage_SF" />
+	  <point id="GS_Split_Temp_Compensated_Target_Voltage" offset="23" type="int16" sf="GS_Split_DC_Voltage_SF" />
+	  <point id="GS_Split_AUX_Output_State" offset="24" type="enum16" >
+	    <symbol id="DISABLED">0</symbol>
+        <symbol id="ENABLED">1</symbol>
+      </point>
+	  <point id="GS_Split_AUX_Relay_Output_State" offset="25" type="enum16" >
+	    <symbol id="DISABLED">0</symbol>
+        <symbol id="ENABLED">1</symbol>
+      </point>
+	  <point id="GS_Split_L_Module_Transformer_Temperature" offset="26" type="int16" />
+	  <point id="GS_Split_L_Module_Capacitor_Temperature" offset="27" type="int16" />
+	  <point id="GS_Split_L_Module_FET_Temperature" offset="28" type="int16" />
+	  <point id="GS_Split_R_Module_Transformer_Temperature" offset="29" type="int16" />
+	  <point id="GS_Split_R_Module_Capacitor_Temperature" offset="30" type="int16" />
+	  <point id="GS_Split_R_Module_FET_Temperature" offset="31" type="int16" />
+	  <point id="GS_Split_Battery_Temperature" offset="32" type="int16" />
+	  <point id="GS_Split_AC_Input_Selection" offset="33" type="enum16" >
+	    <symbol id="GRID">0</symbol>
+        <symbol id="GEN">1</symbol>
+      </point>
+	  <point id="GS_Split_AC_Input_Frequency" offset="34" type="int16" sf="GS_Split_AC_Frequency_SF" />
+	  <point id="GS_Split_AC_Input_Voltage" offset="35" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_AC_Input_State" offset="36" type="enum16" >
+	    <symbol id="AC_USE">0</symbol>
+        <symbol id="AC_DROP">1</symbol>
+      </point>
+	  <point id="GS_Split_Minimum_AC_Input_Voltage" offset="37" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_Maximum_AC_Input_Voltage" offset="38" type="int16" sf="GS_Split_AC_Voltage_SF" />
+	  <point id="GS_Split_Sell_Status" offset="39" type="bitfield16" >
+	    <symbol id="AC_INPUT_FREQUENCY_TOO_HIGH">0</symbol>
+        <symbol id="AC_INPUT_FREQNCY_TOO_LOW">1</symbol>
+        <symbol id="AC_INPUT_VOLTAGE_TOO_LOW">2</symbol>
+        <symbol id="AC_INPUT_VOLTAGE_TOO_HIGH">3</symbol>
+        <symbol id="AWAITING_SELL_DELAY">4</symbol>
+        <symbol id="SELL_DISABLED">5</symbol>
+        <symbol id="BATTERY_VOLTAGE_LESS_THAN_TARGET">6</symbol>
+    </point>
+    <point id="GS_Split_KWh_SF" offset="40" type="sunssf" mandatory="true" />
+	  <point id="GS_Split_AC1_L1_Buy_kWh" offset="41" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC2_L1_Buy_kWh" offset="42" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC1_L1_Sell_kWh" offset="43" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC2_L1_Sell_kWh" offset="44" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_L1_Output_kWh" offset="45" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC1_L2_Buy_kWh" offset="46" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC2_L2_Buy_kWh" offset="47" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC1_L2_Sell_kWh" offset="48" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC2_L2_Sell_kWh" offset="49" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_L2_Output_kWh" offset="50" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_Charger_kWh" offset="51" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_Output_kW" offset="52" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_Buy_kW" offset="53" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_Sell_kW" offset="54" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_Charge_kW" offset="55" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_Load_kW" offset="56" type="uint16" sf="GS_Split_KWh_SF" />
+	  <point id="GS_Split_AC_Couple_kW" offset="57" type="uint16" sf="GS_Split_KWh_SF" />
+    </block>
+  </model>
+</sunSpecModels>

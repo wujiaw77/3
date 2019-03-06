@@ -1,0 +1,90 @@
+<sunSpecModels v="1">
+  <!-- 1: Aquion BMS "hack to make Aquion sunspec complientish -->
+  <model id="64201" len="40" name="PROXY: Aquion BMS">
+    <block len="40">
+      <point id="rev" offset="0" type="uint16" />
+      <point id="firmware" offset="1" type="uint16" />
+      <point id="rated_energy" offset="2" type="uint16" sf="0.1" />
+      <point id="battery_count" offset="3" type="uint16" />
+      <point id="module_count" offset="4" type="uint16" />
+      <point id="stack_count" offset="5" type="uint16" />
+      <point id="contactor_status" offset="8" type="bitfield16" >
+        <symbol id="STRING_1">0</symbol>
+        <symbol id="STRING_2">1</symbol>
+        <symbol id="STRING_3">2</symbol>
+        <symbol id="STRING_4">3</symbol>
+        <symbol id="STRING_5">4</symbol>
+        <symbol id="STRING_6">5</symbol>
+        <symbol id="STRING_7">6</symbol>
+        <symbol id="STRING_8">7</symbol>
+        <symbol id="STRING_9">8</symbol>
+        <symbol id="STRING_10">9</symbol>
+        <symbol id="STRING_11">10</symbol>
+        <symbol id="STRING_12">11</symbol>
+        <symbol id="STRING_13">12</symbol>
+        <symbol id="STRING_14">13</symbol>
+        <symbol id="STRING_15">14</symbol>
+        <symbol id="STRING_16">15</symbol>
+      </point>
+      <point id="fault_code" offset="9" type="bitfield16" >
+        <symbol id="STRING_COMMS">0</symbol>
+        <symbol id="MODULE_COMMS">1</symbol>
+        <symbol id="GROUND_FAULT">2</symbol>
+        <symbol id="OUT_OF_BALANCE">3</symbol>
+        <symbol id="OVER_VOLTAGE">4</symbol>
+        <symbol id="UNDER_VOLTAGE">5</symbol>
+        <symbol id="OVER_TEMPERATURE">6</symbol>
+        <symbol id="UNDER_TEMPERATURE">7</symbol>
+        <symbol id="OVER_CURRENT">8</symbol>
+        <symbol id="CONTACTOR_FAIL">9</symbol>
+        <symbol id="FUSE_FAULT">10</symbol>
+      </point>
+      <point id="warning_code" offset="10" type="bitfield16" >
+        <symbol id="STRING_COMMS">0</symbol>
+        <symbol id="MODULE_COMMS">1</symbol>
+        <symbol id="GROUND_FAULT">2</symbol>
+        <symbol id="OUT_OF_BALANCE">3</symbol>
+        <symbol id="OVER_VOLTAGE">4</symbol>
+        <symbol id="UNDER_VOLTAGE">5</symbol>
+        <symbol id="OVER_TEMPERATURE">6</symbol>
+        <symbol id="UNDER_TEMPERATURE">7</symbol>
+        <symbol id="OVER_CURRENT">8</symbol>
+        <symbol id="CONTACTOR_FAIL">9</symbol>
+        <symbol id="FUSE_FAULT">10</symbol>
+      </point>
+      <point id="soc" offset="11" type="int16" sf="0.1" />
+      <point id="soh" offset="12" type="int16" sf="0.1" />
+      <point id="dc_volts" offset="13" type="uint16" sf="0.01526" />
+      <point id="dc_current" offset="14" type="int16" sf="0.0305" />
+      <point id="charge_current_limit" offset="15" type="uint16" sf="0.01526" />
+      <point id="discharge_current_limit" offset="16" type="uint16" sf="0.01526" />
+      <point id="charge_power_limit" offset="17" type="uint16" sf="0.01526" />
+      <point id="discharge_power_limit" offset="18" type="uint16" sf="0.01526" />
+      <point id="max_module_volts" offset="19" type="uint16" />
+      <point id="max_module_volts_loc" offset="20" type="uint16" />
+      <point id="min_module_volts" offset="21" type="uint16" />
+      <point id="min_module_volts_loc" offset="22" type="uint16" />
+      <point id="max_module_temp" offset="23" type="int16" />
+      <point id="max_module_temp_loc" offset="24" type="uint16" />
+      <point id="min_module_temp" offset="25" type="int16" />
+      <point id="min_module_temp_loc" offset="26" type="uint16" />
+      <point id="ahr_charge_msb" offset="27" type="uint16" />
+      <point id="ahr_charge_lsb" offset="28" type="uint16" />
+      <point id="ahr_discharge_msb" offset="29" type="uint16" />
+      <point id="ahr_discharge_lsb" offset="30" type="uint16" />
+      <point id="kwhr_charge_msb" offset="31" type="uint16" />
+      <point id="kwhr_charge_lsb" offset="32" type="uint16" />
+      <point id="kwhr_discharge_msb" offset="33" type="uint16" />
+      <point id="kwhr_discharge_lsb" offset="34" type="uint16" />
+      <point id="charge_voltage_limit" offset="35" type="uint16" sf="0.01526" />
+      <point id="discharge_voltage_limit" offset="36" type="uint16" sf="0.01526" />
+      <point id="soc_cc" offset="37" type="int16" />
+      <point id="soc_pc" offset="38" type="int16" />
+    </block>
+  </model>
+  <strings id="64201" locale="en">
+    <model>
+      <label>Aquion modbus hack</label>
+    </model>
+  </strings>
+</sunSpecModels>

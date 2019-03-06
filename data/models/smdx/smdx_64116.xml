@@ -1,0 +1,157 @@
+<sunSpecModels v="1">
+  <!-- 64116: OutBack Radian Inverter Configuration -->
+  <model id="64116" len="89" name="PROXY: Radian Configuration">
+    <block len="89">
+      <point id="GSconfig_Port_number" offset="0" type="uint16" mandatory="true" />
+      <point id="GSconfig_DC_Voltage_SF" offset="1" type="sunssf" mandatory="true" />
+      <point id="GSconfig_AC_Current_SF" offset="2" type="sunssf" mandatory="true" />
+      <point id="GSconfig_AC_Voltage_SF" offset="3" type="sunssf" mandatory="true" />
+      <point id="GSconfig_Time_SF" offset="4" type="sunssf" mandatory="true" />
+      <point id="GSconfig_Major_Firmware_Number" offset="5" type="uint16" />
+      <point id="GSconfig_Mid_Firmware_Number" offset="6" type="uint16" />
+      <point id="GSconfig_Minor_Firmware_Number" offset="7" type="uint16" />
+      <point id="GSconfig_Absorb_Volts" offset="8" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_Absorb_Time_Hours" offset="9" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_Float_Volts" offset="10" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_Float_Time_Hours" offset="11" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_ReFloat_Volts" offset="12" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_EQ_Volts" offset="13" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_EQ_Time_Hours" offset="14" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_Search_Sensitivity" offset="15" type="uint16" />
+      <point id="GSconfig_Search_Pulse_Length" offset="16" type="uint16" />
+      <point id="GSconfig_Search_Pulse_Spacing" offset="17" type="uint16" />
+      <point id="GSconfig_AC_Input_Select_Priority" offset="18" type="enum16" >
+        <symbol id="GRID">0</symbol>
+        <symbol id="GEN">1</symbol>
+      </point>
+      <point id="GSconfig_Grid_AC_Input_Current_Limit" offset="19" type="uint16" sf="GSconfig_AC_Current_SF" />
+      <point id="GSconfig_Gen_AC_Input_Current_Limit" offset="20" type="uint16" sf="GSconfig_AC_Current_SF" />
+      <point id="GSconfig_Charger_AC_Input_Current_Limit" offset="21" type="uint16" sf="GSconfig_AC_Current_SF" />
+      <point id="GSconfig_Charger_Operating_Mode" offset="22" type="enum16" >
+        <symbol id="ALL_INVERTER_CHARGING_DISABLED">0</symbol>
+        <symbol id="BULK_AND_FLOAT_CHARGING_ENABLED">1</symbol>
+      </point>
+      <point id="GSconfig_AC_Coupled" offset="23" type="enum16" >
+        <symbol id="NO">0</symbol>
+        <symbol id="YES">1</symbol>
+      </point>
+      <point id="GSconfig_Grid_Input_Mode" offset="24" type="enum16" >
+        <symbol id="GENERATOR">0</symbol>
+        <symbol id="SUPPORT">1</symbol>
+        <symbol id="GRID_TIED">2</symbol>
+        <symbol id="UPS">3</symbol>
+        <symbol id="BACKUP">4</symbol>
+        <symbol id="MINI_GRID">5</symbol>
+        <symbol id="GRID_ZERO">6</symbol>
+      </point>
+      <point id="GSconfig_Grid_Lower_Input_Voltage_Limit" offset="25" type="uint16" sf="GSconfig_AC_Voltage_SF" />
+      <point id="GSconfig_Grid_Upper_Input_Voltage_Limit" offset="26" type="uint16" sf="GSconfig_AC_Voltage_SF" />
+      <point id="GSconfig_Grid_Transfer_Delay" offset="27" type="uint16" />
+      <point id="GSconfig_Grid_Connect_Delay" offset="28" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_Gen_Input_Mode" offset="29" type="enum16" >
+        <symbol id="GENERATOR">0</symbol>
+        <symbol id="SUPPORT">1</symbol>
+        <symbol id="GRID_TIED">2</symbol>
+        <symbol id="UPS">3</symbol>
+        <symbol id="BACKUP">4</symbol>
+        <symbol id="MINI_GRID">5</symbol>
+        <symbol id="GRID_ZERO">6</symbol>
+      </point>
+      <point id="GSconfig_Gen_Lower_Input_Voltage_Limit" offset="30" type="uint16" sf="GSconfig_AC_Voltage_SF" />
+      <point id="GSconfig_Gen_Upper_Input_Voltage_Limit" offset="31" type="uint16" sf="GSconfig_AC_Voltage_SF" />
+      <point id="GSconfig_Gen_Transfer_Delay" offset="32" type="uint16" />
+      <point id="GSconfig_Gen_Connect_Delay" offset="33" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_AC_Output_Voltage" offset="34" type="uint16" sf="GSconfig_AC_Voltage_SF" />
+      <point id="GSconfig_Low_Battery_Cut_Out_Voltage" offset="35" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_Low_Battery_Cut_In_Voltage" offset="36" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_AUX_Mode" offset="37" type="enum16" >
+        <symbol id="DEFAULT">0</symbol>
+        <symbol id="LOAD_SHED">1</symbol>
+        <symbol id="GEN_ALERT">2</symbol>
+        <symbol id="FAULT">3</symbol>
+        <symbol id="VENT_FAN">4</symbol>
+        <symbol id="COOL_FAN">5</symbol>
+        <symbol id="DC_DIVERT">6</symbol>
+        <symbol id="GRID_LIMIT">7</symbol>
+        <symbol id="AC_SOURCE_STATUS">8</symbol>
+        <symbol id="AC_DIVERT">9</symbol>
+      </point>
+      <point id="GSconfig_AUX_Control" offset="38" type="enum16" >
+        <symbol id="OFF">0</symbol>
+        <symbol id="AUTO">1</symbol>
+        <symbol id="ON">2</symbol>
+      </point>
+      <point id="GSconfig_AUX_ON_Battery_Voltage" offset="39" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_AUX_ON_Delay_Time" offset="40" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_AUX_OFF_Battery_Voltage" offset="41" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_AUX_OFF_Delay_Time" offset="42" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_AUX_Relay_Mode" offset="43" type="enum16" >
+        <symbol id="DEFAULT">0</symbol>
+        <symbol id="LOAD_SHED">1</symbol>
+        <symbol id="GEN_ALERT">2</symbol>
+        <symbol id="FAULT">3</symbol>
+        <symbol id="VENT_FAN">4</symbol>
+        <symbol id="COOL_FAN">5</symbol>
+        <symbol id="DC_DIVERT">6</symbol>
+        <symbol id="GRID_LIMIT">7</symbol>
+        <symbol id="AC_SOURCE_STATUS">8</symbol>
+        <symbol id="AC_DIVERT">9</symbol>
+      </point>
+      <point id="GSconfig_AUX_Relay_Control" offset="44" type="enum16" >
+        <symbol id="OFF">0</symbol>
+        <symbol id="AUTO">1</symbol>
+        <symbol id="ON">2</symbol>
+      </point>
+      <point id="GSconfig_AUX_Relay_ON_Battery_Voltage" offset="45" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_AUX_Relay_ON_Delay_Time" offset="46" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_AUX_Relay_OFF_Battery_Voltage" offset="47" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_AUX_Relay_OFF_Delay_Time" offset="48" type="uint16" sf="GSconfig_Time_SF" />
+      <point id="GSconfig_Stacking_Mode" offset="49" type="enum16" >
+        <symbol id="MASTER">10</symbol>
+        <symbol id="SLAVE">12</symbol>
+        <symbol id="B_PHASE_MASTER">17</symbol>
+        <symbol id="C_PHASE_MASTER">18</symbol>
+      </point>
+      <point id="GSconfig_Master_Power_Save_Level" offset="50" type="uint16" />
+      <point id="GSconfig_Slave_Power_Save_Level" offset="51" type="uint16" />
+      <point id="GSconfig_Sell_Volts" offset="52" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_Grid_Tie_Window" offset="53" type="enum16" >
+  	    <symbol id="IEEE">0</symbol>
+  	    <symbol id="USER">1</symbol>
+      </point>
+      <point id="GSconfig_Grid_Tie_Enable" offset="54" type="enum16" >
+  	    <symbol id="YES">0</symbol>
+  	    <symbol id="NO">1</symbol>
+      </point>
+      <point id="GSconfig_Grid_AC_Input_Voltage_Calibrate_Factor" offset="55" type="uint16" />
+      <point id="GSconfig_Gen_AC_Input_Voltage_Calibrate_Factor" offset="56" type="uint16" />
+      <point id="GSconfig_AC_Output_Voltage_Calibrate_Factor" offset="57" type="uint16" />
+      <point id="GSconfig_Battery_Voltage_Calibrate_Factor" offset="58" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_ReBulk_Volts" offset="59" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_Mini_Grid_LBX_Volts" offset="60" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_Mini_Grid_LBX_Delay" offset="61" type="uint16" />
+      <point id="GSconfig_Grid_Zero_DoD_Volts" offset="62" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_Grid_Zero_DoD_Max_Offset_AC_Amps" offset="63" type="uint16" sf="GSconfig_AC_Current_SF" />
+      <point id="GSconfig_Serial_Number" offset="64" type="string" len="9" />
+      <point id="GSconfig_Model_Number" offset="73" type="string" len="9" />
+      <point id="GSconfig_Module_Control" offset="82" type="enum16" >
+        <symbol id="AUTO">0</symbol>
+        <symbol id="LEFT">1</symbol>
+        <symbol id="RIGHT">2</symbol>
+        <symbol id="BOTH">3</symbol>
+      </point>
+      <point id="GSconfig_Model_Select" offset="83" type="enum16" >
+  	    <symbol id="FULL">0</symbol>
+  	    <symbol id="HALF">1</symbol>
+      </point>
+      <point id="GSconfig_Low_Battery_Cut_Out_Delay" offset="84" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_High_Battery_Cut_Out_Voltage" offset="85" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_High_Battery_Cut_In_Voltage" offset="86" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_High_Battery_Cut_Out_Delay" offset="87" type="uint16" sf="GSconfig_DC_Voltage_SF" />
+      <point id="GSconfig_EE_Write_Enable" offset="88" type="enum16" >
+  	    <symbol id="DISABLE">0</symbol>
+  	    <symbol id="ENABLE">1</symbol>
+      </point>
+    </block>
+  </model>
+</sunSpecModels>

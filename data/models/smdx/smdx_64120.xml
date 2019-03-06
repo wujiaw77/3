@@ -1,0 +1,78 @@
+<sunSpecModels v="1">
+  <!-- 64120: OutBack System Control -->
+  <model id="64120" len="25" name="PROXY: Outback System Control">
+    <block len="25">
+      <point id="OB_DC_Voltage_SF" offset="0" type="sunssf" mandatory="true" />
+      <point id="OB_AC_Current_SF" offset="1" type="sunssf" mandatory="true" />
+      <point id="OB_Time_SF" offset="2" type="sunssf" mandatory="true" />
+      <point id="OB_Bulk_Charge_Enable_Disable" offset="3" type="enum16" >
+        <symbol id="DEFAULT">0</symbol>
+        <symbol id="START_BULK">1</symbol>
+        <symbol id="STOP_BULK">2</symbol>
+        <symbol id="START_EQ_CHARGE">3</symbol>
+        <symbol id="STOP_EQ_CHARGE">4</symbol>
+      </point>
+      <point id="OB_Inverter_AC_Drop_Use" offset="4" type="enum16" >
+        <symbol id="DEFAULT">0</symbol>
+        <symbol id="USE">1</symbol>
+        <symbol id="DROP">2</symbol>
+      </point>
+      <point id="OB_Set_Inverter_Mode" offset="5" type="enum16" >
+  	    <symbol id="DEFAULT">0</symbol>
+  	    <symbol id="OFF">1</symbol>
+        <symbol id="SEARCH">2</symbol>
+  	    <symbol id="ON">3</symbol>
+      </point>
+      <point id="OB_Grid_Tie_Mode" offset="6" type="enum16" >
+  	    <symbol id="DEFAULT">0</symbol>
+  	    <symbol id="ENABLE">1</symbol>
+        <symbol id="DISABLE">2</symbol>
+      </point>
+      <point id="OB_Set_Inverter_Charger_Mode" offset="7" type="enum16" >
+  	    <symbol id="DEFAULT">0</symbol>
+  	    <symbol id="OFF">1</symbol>
+        <symbol id="AUTO">2</symbol>
+  	    <symbol id="ON">3</symbol>
+      </point>
+      <point id="OB_Control_Status" offset="8" type="bitfield16" >
+        <symbol id="DEFAULT">0</symbol>
+        <symbol id="BULK_CHARGING">1</symbol>
+        <symbol id="FLOAT_CHARGING">2</symbol>
+        <symbol id="INVERTER_AC_INPUT_USE">3</symbol>
+        <symbol id="INVERTER_OFF">4</symbol>
+        <symbol id="INVERTER_SEARCH_MODE">5</symbol>
+        <symbol id="INVERTER_ON">6</symbol>
+        <symbol id="INVERTER_GRID_TIE_ENABLED">7</symbol>
+        <symbol id="INVERTER_CHARGER_DISABLED">8</symbol>
+        <symbol id="INVERTER_CHARGER_AUTO_MODE">9</symbol>
+        <symbol id="INVERTER_CHARGER_BULK_AND_FLOAT_MODE">10</symbol>
+        <symbol id="EQ_CHARGING">11</symbol>
+      </point>
+      <point id="OB_Set_Sell_Voltage" offset="9" type="uint16" sf="OB_DC_Voltage_SF" />
+      <point id="OB_Set_Radian_Inverter_Sell_Current_Limit" offset="10" type="uint16" sf="OB_AC_Current_SF" />
+      <point id="OB_Set_Absorb_Voltage" offset="11" type="uint16" sf="OB_DC_Voltage_SF" />
+      <point id="OB_Set_Absorb_Time" offset="12" type="uint16" sf="OB_Time_SF" />
+      <point id="OB_Set_Float_Voltage" offset="13" type="uint16" sf="OB_DC_Voltage_SF" />
+      <point id="OB_Set_Float_Time" offset="14" type="uint16" sf="OB_Time_SF" />
+      <point id="OB_Set_Inverter_Charger_Current_Limit" offset="15" type="uint16" sf="OB_AC_Current_SF" />
+      <point id="OB_Set_Inverter_AC1_Current_Limit" offset="16" type="uint16" sf="OB_AC_Current_SF" />
+      <point id="OB_Set_Inverter_AC2_Current_Limit" offset="17" type="uint16" sf="OB_AC_Current_SF" />
+      <point id="OB_Set_AGS_OP_Mode" offset="18" type="enum16" >
+  	    <symbol id="OFF">0</symbol>
+  	    <symbol id="ON">1</symbol>
+        <symbol id="AUTO">2</symbol>
+      </point>
+      <point id="OB_AGS_Operational_State" offset="19" type="enum16" >
+        <symbol id="GEN_STOP">0</symbol>
+        <symbol id="GEN_STARTING">1</symbol>
+        <symbol id="GEN_RUNNING">2</symbol>
+        <symbol id="GEN_WARMUP">3</symbol>
+        <symbol id="GEN_COOLDOWN">4</symbol>
+        <symbol id="GEN_AWAITING_AC">5</symbol>
+      </point>
+      <point id="OB_AGS_Operational_State_Timer" offset="20" type="uint16" />
+      <point id="OB_Gen_Last_Run_Start_Time_GMT" offset="21" type="uint32" />
+      <point id="OB_Gen_Last_Start_Run_Duration" offset="23" type="uint32" />
+    </block>
+  </model>
+</sunSpecModels>

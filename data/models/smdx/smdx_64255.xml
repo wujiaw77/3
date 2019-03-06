@@ -1,0 +1,12 @@
+<sunSpecModels v="1">
+  <!-- 1: Outback Power: OPTICS packet statistics -->
+  <model id="64255" len="56" name="PROXY: OutBack OPTICS">
+    <block len="56">
+    </block>
+  </model>
+  <strings id="64255" locale="en">
+    <model>
+      <label>OPTICS packet statistics</label>
+    </model>
+  </strings>
+</sunSpecModels>
