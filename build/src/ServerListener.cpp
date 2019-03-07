@@ -1,5 +1,4 @@
 // INCLUDES
-#include <fstream>
 #include <string>
 #include "include/ServerListener.h"
 
@@ -63,18 +62,7 @@ void ServerListener::PropertiesChanged (ajn::ProxyBusObject& obj,
                     der_ptr_->SetPrice(price);
                 } else if (!strcmp(name,"time")) {
                     status = val->Get("u", &time_);
-		    time_t remote_time = time_;
-		    struct tm ts = *localtime (&remote_time);
-		    char buf[100];
-		    strftime (buf, sizeof(buf), "%F %T", &ts);
-		    std::cout << std::string(buf) << std::endl;
-		    std::ofstream file ("/etc/fake-hwclock.data");
-		    if (file.is_open ()) {
-			file << std::string(buf);
-		    } else {
-			std::cout << "File not open" << std::endl;
-		    }
-		    file.close ();
+                    std::cout << time_ << std::endl;
                     der_ptr_->SetRemoteTime(time_);
                 }
             } else {

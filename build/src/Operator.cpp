@@ -37,7 +37,6 @@ void Operator::Loop () {
         ScheduleHeader& row = schedule_[i];
 
         if (row.time % seconds_per_day == utc && index_ != i) {
-
             // if the time is found check control type
             if (row.control == "import") {
                 der_ptr_->SetImportWatts(row.setting);

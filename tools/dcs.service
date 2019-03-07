@@ -3,11 +3,12 @@ Description=Distributed Control System (DCS) for Portland State University
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/tmux new-session -d -s DCS '/home/pi/dev/powerlab/DCS/tools/build-run.sh'
-ExecStop=/usr/bin/tmux kill-session -t DCS
-WorkingDirectory=/home/pi/dev/powerlab/DCS/tools
+ExecStart=/usr/bin/tmux new-session -d -s BESS2 '/home/pi/dev/DCS/tools/build-run.sh'
+ExecStop=/usr/bin/tmux kill-session -t BESS2
+WorkingDirectory=/home/pi/dev/DCS/tools
 Restart=always
 RestartSec=60
+User=pi
 Type=forking
 
 [Install]

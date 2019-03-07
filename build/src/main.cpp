@@ -36,7 +36,7 @@
 #include <string>
 #include <vector>
 #include <map>
-#include "include/DistributedEnergyResource.h"
+#include "include/BatteryEnergyStorageSystem.h"
 #include "include/CommandLineInterface.h"
 #include "include/Operator.h"
 #include "include/SmartGridDevice.h"
@@ -213,8 +213,8 @@ int main (int argc, char** argv) {
 
     cout << "\tCreating Distributed Energy Resource\n";
     // ~ reference DistributedEnergyResource and BatteryEnergyStorageSystem
-    DistributedEnergyResource* der_ptr 
-        = new DistributedEnergyResource(configs["DER"]);
+    BatteryEnergyStorageSystem* der_ptr 
+        = new BatteryEnergyStorageSystem(configs);
 
     cout << "\tCreating Operator\n";
     // ~ reference Operator.h

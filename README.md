@@ -1,7 +1,4 @@
 # DCS (Distributed Control System)
-If you are new to github, then you should read the following link to get an understanding of the workflow required.
-
-https://github.com/emesene/emesene/wiki/GitHowTo#what-should-i-do-if-im-in-a-bad-situation
 
 ## Dependancies
 ### Linux Environment
@@ -9,20 +6,8 @@ https://github.com/emesene/emesene/wiki/GitHowTo#what-should-i-do-if-im-in-a-bad
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install tmux git build-essential gcc g++ cmake make xsltproc scons doxygen graphviz libgtk2.0-dev libssl-dev libxml2-dev libcap-dev
-mkdir ~/src ~/dev ~/dev/LOGS
+mkdir ~/dev ~/src
 ```
-
-### Fake Hardware Clock
-``` console
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install fake_hwclock
-sudo systemctl enable fake-hwclock.service
-sudo systemctl start fake-hwclock.service
-sudo nano /etc/cron.hourly/fake-hwclock
-        add "fake-hwclock load force" above the save function. Don't include quotes.
-``
-
 
 ### Hostname
 To make connecting remotely from the local network easier, update the hostname. Modify the hostname under (2. Network Options), (N1 Hostname) in raspi-config.
@@ -77,10 +62,38 @@ cd ../bin/samples
 ```
 If the BusAttachment/AboutObj succeed, then the installation should be fine.
 
+### libmodbus
+``` console
+cd ~/src
+git clone https://github.com/stephane/libmodbus
+cd libmodbus
+sudo apt-get install automake autoconf libtool
+./autogen.sh
+./configure
+sudo make install
+```
+#### Test
+Open two terminals run the random-test-server in one and the random-test-client in the other. The client will send a variety of response to the server and should response with test success if all signals are processed correctly.
+
+``` console
+cd src/libmodbus/tests
+./random-test-server
+```
+
+``` console
+cd src/libmodbus/tests
+./random-test-client
+```
+### BOOST
+The boost libraries will be sued to create the XML property trees used for modbus querries. Follow the getting started to download and move the bost libraries into the ~/src directory with other libraries.
+
+https://www.boost.org/doc/libs/1_66_0/more/getting_started/unix-variants.html
+
+
 ## Install
 ``` console
 cd ~/dev
-git clone https://github.com/psu-powerlab/DCS
+git clone https://github.com/BESS-Outback/DCS
 ```
 
 ### Setup
@@ -126,7 +139,6 @@ The program can be controlled three ways:
 > o <y/n>       operator enable/disable
 > p             print properties
 ```
-
 ## Setup DCS Service
 Once all dependencies have been satisfied and the DCS will run using the build-run.sh script you can set it as a service that will restart on crash and start on boot. open the dcs.service file and modify paths for the the following:
 1. ExecStart
@@ -154,3 +166,9 @@ The service will spawn a tmux session that can be attached to to use the CLI of 
 tmux ls
 tmux a
 ```
+
+## Class UML
+
+<p align="center">
+  <img src="DCS_BESS_Class_UML.png" alt="Class UML">
+</p>
