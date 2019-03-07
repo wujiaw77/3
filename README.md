@@ -89,7 +89,6 @@ The boost libraries will be sued to create the XML property trees used for modbu
 
 https://www.boost.org/doc/libs/1_66_0/more/getting_started/unix-variants.html
 
-
 ## Install
 ``` console
 cd ~/dev
