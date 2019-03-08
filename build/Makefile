@@ -32,6 +32,13 @@ CFLAGS += -DROUTER
 LIB += -L$(AJ_LIB) -lalljoyn -lajrouter
 INC += -I$(AJ_INC)
 
+# Modbus Requirments
+LIB += -L$(MB_LIB) -lmodbus
+INC += -I$(MB_INC)
+
+# Boost Requirments
+INC += -I$(BST_INC)
+
 $(TARGET) : $(OBJECTS)
 	@mkdir -p $(TARGETDIR)
 	@echo "\n\tLinking $(TARGET)\n"; $(CC) $^ -o $(TARGET) $(LIB)
